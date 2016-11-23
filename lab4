@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+int main()
+{
+	double *Massiv;
+	int n;
+	printf_s("n=");
+	scanf_s("%d", &n);
+	Massiv = (double *)malloc(n * sizeof(double));
+	for (int i = 0; i < n; i++)
+	{
+		Massiv[i] = rand() % 100;
+		printf_s("%f ", Massiv[i]);
+	}
+    for(int i=0; i<n-1; i+=2)
+	{
+		double buffer = Massiv[i];
+		Massiv[i] = Massiv[i+1];
+		Massiv[i+1] = buffer;
+	}
+	printf_s("\n");
+	for (int i = 0; i < n; i++)
+	{
+		printf_s("%f ", Massiv[i]);
+	}
+	_getch();
+	free(Massiv);
+}

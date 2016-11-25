@@ -4,27 +4,27 @@
 
 int main()
 {
-	double *Massiv;
+	double *mas;
 	int n;
 	printf_s("n=");
 	scanf_s("%d", &n);
-	Massiv = (double *)malloc(n * sizeof(double));
+	mass = (double *)malloc(n * sizeof(double));
 	for (int i = 0; i < n; i++)
 	{
-		Massiv[i] = rand() % 100;
-		printf_s("%f ", Massiv[i]);
+		mass [i] = rand() % 100;
+		printf_s("%f ", mass [i]);
 	}
     for(int i=0; i<n-1; i+=2)
 	{
-		double buffer = Massiv[i];
-		Massiv[i] = Massiv[i+1];
-		Massiv[i+1] = buffer;
+		double buffer = mass [i];
+		mass [i] = mass [i+1];
+		mass [i+1] = buffer;
 	}
 	printf_s("\n");
 	for (int i = 0; i < n; i++)
 	{
-		printf_s("%f ", Massiv[i]);
+		printf_s("%f ", mass [i]);
 	}
 	_getch();
-	free(Massiv);
+	free(mass);
 }
